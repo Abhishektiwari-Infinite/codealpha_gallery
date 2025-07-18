@@ -1,0 +1,101 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filters button:hover {
+  background: #555;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav .prev, .nav .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  font-size: 40px;
+  color: white;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.nav .prev { left: 0; }
+.nav .next { right: 0; }
+
+@media (max-width: 600px) {
+  .nav .prev, .nav .next {
+    font-size: 30px;
+    padding: 12px;
+  }
+}
